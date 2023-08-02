@@ -18,8 +18,33 @@ $(function(){
   $(".section__wrapper-title").append(html);
 });
 
+$(function(){
+  let items = $(".section__wrapper-item")
+
+  let htmlItems = items.map((item,index)=>{
+   return items
+  })
+
+  console.log(htmlItems)
+
+  // $(".section__wrapper-loop").append(`${htmlItems}`);
+
+});
+
+for (let i = 0; i < 10; i++) {
+  console.log("現在" + (i+1) + "回目の処理です。");
+  let rankingNum= `${i+1}`
+  console.log(rankingNum)
+  $(".imgNumver").append(rankingNum);
+}
+
+console.log($(window).scrollTop())
 
 
-
-      
-
+$(".main__slide-img").slick({
+  arrows:false,
+  dots: false,
+  infinite: true,
+  autoplay :true,
+  autoplaySpeed: 4000,
+});

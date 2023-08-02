@@ -29,7 +29,9 @@
   "dependencies": {
     "gulp-plumber": "^1.2.1",
     "jquery": "^3.7.0",
-    "scrollreveal": "^4.0.9"
+    "scrollreveal": "^4.0.9",
+    "slick-carousel": "^1.8.1",
+    "sticky-sidebar": "^3.3.1"
   },
   "description": ""
 }

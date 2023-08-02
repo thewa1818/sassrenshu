@@ -10,6 +10,14 @@
 //   $("html,body").animate({scrollTop:position},speed);
 // })
 
+$(".main__slide-img").slick({
+  arrows:false,
+  dots: false,
+  infinite: true,
+  autoplay :true,
+  autoplaySpeed: 4000,
+});
+
 $(function(){
   let month = new Date().getMonth() + 1;
   let date = new Date().getDate();
@@ -27,24 +35,33 @@ $(function(){
 
   console.log(htmlItems)
 
+  for (let i = 0; i < 10; i++) {
+    let rankingNum= `${i+1}`
+    console.log(rankingNum);
+    $(".imgNumver").append(rankingNum);
+  }
+
+
   // $(".section__wrapper-loop").append(`${htmlItems}`);
 
 });
 
-for (let i = 0; i < 10; i++) {
-  console.log("現在" + (i+1) + "回目の処理です。");
-  let rankingNum= `${i+1}`
-  console.log(rankingNum)
-  $(".imgNumver").append(rankingNum);
-}
-
-console.log($(window).scrollTop())
 
 
-$(".main__slide-img").slick({
-  arrows:false,
-  dots: false,
-  infinite: true,
-  autoplay :true,
-  autoplaySpeed: 4000,
+
+
+
+
+$(function () {
+  var $body = $('.section__aside-info'),
+      $navTypeA = $('.section__aside-info'),
+      navTypeAOffsetTop = $navTypeA.offset().top;
+  
+  $(window).on('scroll', function () {
+    if($(this).scrollTop() > navTypeAOffsetTop) {
+      $body.addClass('is-fixed');
+    } else {
+      $body.removeClass('is-fixed');
+    }
+  });
 });

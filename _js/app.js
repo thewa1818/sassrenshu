@@ -111,7 +111,7 @@ $(function () {
   });
 
   $(".sale__close").on("click", function () {
-    $(".sale").fadeOut(1000);
+    $(".sale").removeClass("on");
     $("#wrap").removeClass("overlay");
   });
 

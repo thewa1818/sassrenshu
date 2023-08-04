@@ -80,6 +80,7 @@ $(function () {
     }
   });
 
+  //会員登録
   $(window).bind("scroll", function () {
     scrollHeight = $(document).height();
     scrollPosition = $(window).height() + $(window).scrollTop();
@@ -90,6 +91,7 @@ $(function () {
     }
   });
 
+  //三回押したら
   var num = 1;
 
   $(".modal__close").on("click", function () {
@@ -101,19 +103,16 @@ $(function () {
     if (num === 4) {
       $(".sale").addClass("on");
       $("#wrap").addClass("overlay");
+      $(".sale__timer").countdowntimer({
+        minutes: 30,
+        size: "lg",
+      });
     }
-  });
-
-  $(function () {
-    $(".sale__timer").countdowntimer({
-      minutes: 30,
-      size: "lg",
-    });
   });
 
   $(".sale__close").on("click", function () {
     $(".sale").fadeOut(1000);
-    $("#wrap").addClass("overlay");
+    $("#wrap").removeClass("overlay");
   });
 
   $(".modal__footer__close").on("click", function () {

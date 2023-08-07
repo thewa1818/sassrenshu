@@ -96,15 +96,19 @@
     display: flex;
     margin: 10px;
     height: 1400px;
+    position: relative;
+    z-index: -1;
 
     &-contents {
       width: 80%;
       border: 1px solid #000;
-      margin-right: 10px;
     }
     &-aside {
-      width: 20%;
+      height: 35%;
+      width: 19%;
       border: 1px solid #000;
+      position: absolute;
+      right: 0;
     }
   }
   &-footer {
@@ -298,5 +302,32 @@
       width: 50px;
       height: 50px;
     }
+  }
+}
+
+.aside {
+  width: 500px;
+  height: 300px;
+  border: 1px solid #000;
+  font-size: 70px;
+  position: fixed;
+  display: none;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  margin: auto;
+  background-color: skyblue;
+  &.on {
+    display: block;
+  }
+  &__close {
+    display: block;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
   }
 }

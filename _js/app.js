@@ -66,10 +66,10 @@
 
 $(function () {
   $(window).mousemove(function (e) {
-    console.log(e, "eee");
+    // console.log(e, "eee");
 
-    $("#aa").html(e.clientX);
-    $("#bb").html(e.clientY);
+    // $("#aa").html(e.clientX);
+    // $("#bb").html(e.clientY);
 
     var tate = e.clientX;
     var yoko = e.clientY;
@@ -152,4 +152,66 @@ $(function () {
 $(".btn").on("click", function () {
   $(".toroku").removeClass("on");
   $("#wrap").removeClass("overlay");
+});
+
+//追従
+
+$(window).on("load", function () {
+  var adjust = 0; //スクロール時のトップ位置調整用（問題なければ0）
+  var sidebar = $(".all__wrap-main-aside"); //サイドバーを指定
+  var wrap = $(".all__wrap-main"); //ラッパーを指定
+
+  var adjustTop = 0;
+  var sidebarTop = parseInt(sidebar.css("top"));
+  var sidebarMax = wrap.height() + adjust - sidebar.height();
+
+  $(window).on("scroll", function () {
+    var h = sidebarTop + $(window).scrollTop();
+
+    if (h < sidebarMax) {
+      if ($(window).scrollTop() < adjust) {
+        adjustTop = 0;
+      } else {
+        adjustTop = adjust;
+      }
+      var offset = sidebarTop - adjustTop + $(window).scrollTop() + "px";
+      sidebar.animate({ top: offset }, { duration: 500, queue: false });
+    }
+  });
+});
+
+$(function () {
+  var moveCounter = 0;
+  $(window).mousemove(function (e) {
+    console.log(e, "aside");
+
+    var asideX = e.clientX;
+    var asideY = e.clientY;
+    var move = asideX >= 900 && asideY >= 450;
+
+    console.log(asideX);
+    console.log(asideY);
+
+    if (move) {
+      console.log("表示");
+    }
+
+    moveCounter++;
+
+    $(document).on("mousemove", function () {
+      // カウンターを増やす
+      moveCounter++;
+
+      // カウンターが3に達した場合、要素を表示
+      if (moveCounter === 3) {
+        $(".aside").addClass("on");
+      }
+    });
+
+    console.log(moveCounter);
+  });
+});
+
+$(".aside__close").on("click", function () {
+  $(".aside").removeClass("on");
 });

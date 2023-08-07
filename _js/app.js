@@ -180,35 +180,33 @@ $(window).on("load", function () {
   });
 });
 
+//３回目で広告をだしたい
+
+var moveCounter = 1;
+
 $(function () {
-  var moveCounter = 0;
   $(window).mousemove(function (e) {
-    console.log(e, "aside");
+    // console.log(e, "aside");
+    console.log(moveCounter, "ああああ");
 
     var asideX = e.clientX;
     var asideY = e.clientY;
-    var move = asideX >= 900 && asideY >= 450;
+    var move = asideX >= 1300 && asideY >= 600;
 
     console.log(asideX);
-    console.log(asideY);
+    // console.log(asideY);
 
-    if (move) {
-      console.log("表示");
+    if (asideX >= 1300 && asideY >= 600) {
+      console.log("っっっっk");
+      moveCounter++;
+      console.log(moveCounter, "いいいい");
     }
 
-    moveCounter++;
+    // console.log(moveCounter);
 
-    $(document).on("mousemove", function () {
-      // カウンターを増やす
-      moveCounter++;
-
-      // カウンターが3に達した場合、要素を表示
-      if (moveCounter === 3) {
-        $(".aside").addClass("on");
-      }
-    });
-
-    console.log(moveCounter);
+    if (moveCounter === 3) {
+      $(".aside").addClass("on");
+    }
   });
 });
 

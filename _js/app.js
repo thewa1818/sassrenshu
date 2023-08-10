@@ -244,8 +244,6 @@ var arr2 = arr1.filter(function (item) {
 
 console.log(arr2);
 
-if (arr2 === arr2) {
+if (arr2.length !== 0) {
   alert("二番目");
-} else if (tt === tt) {
-  alert("東京");
 }

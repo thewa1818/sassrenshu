@@ -232,18 +232,32 @@ var tt = vv.filter(function (item) {
 //   alert(1);
 // }
 
+//復習
+
+// var test = location.search;
+// console.log(test);
+
+// var arr1 = test.split("&");
+// console.log(arr1);
+
+// var arr2 = arr1.filter(function (item) {
+//   return item === "utm_num=2";
+// });
+
+// console.log(arr2);
+
+// if (arr2.length !== 0) {
+//   alert("二番目");
+// }
+
 var test = location.search;
 console.log(test);
 
 var arr1 = test.split("&");
 console.log(arr1);
 
-var arr2 = arr1.filter(function (item) {
+var arr2 = arr1.map(function (item) {
   return item === "utm_num=2";
 });
 
 console.log(arr2);
-
-if (arr2.length !== 0) {
-  alert("二番目");
-}

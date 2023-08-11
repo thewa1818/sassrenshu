@@ -216,15 +216,15 @@
 
 //配列操作カスタムパラメータ
 
-var v = location.search;
-console.log(v, "sss");
+// var v = location.search;
+// console.log(v, "sss");
 
-var vv = v.split("&");
-console.log(vv, "分割");
+// var vv = v.split("&");
+// console.log(vv, "分割");
 
-var tt = vv.filter(function (item) {
-  return item === "utm_area=tokyo";
-});
+// var tt = vv.filter(function (item) {
+//   return item === "utm_area=tokyo";
+// });
 
 // console.log(tt, "フィルター");
 
@@ -232,23 +232,25 @@ var tt = vv.filter(function (item) {
 //   alert(1);
 // }
 
-//復習
+//復習;
 
-// var test = location.search;
-// console.log(test);
+var test = location.search;
+console.log(test);
 
-// var arr1 = test.split("&");
-// console.log(arr1);
+var arr1 = test.split("&");
+console.log(arr1);
 
-// var arr2 = arr1.filter(function (item) {
-//   return item === "utm_num=2";
-// });
+var arr2 = arr1.filter(function (item) {
+  return item === "utm_num=2";
+});
 
-// console.log(arr2);
+console.log(arr2);
 
-// if (arr2.length !== 0) {
-//   alert("二番目");
-// }
+if (arr2.length !== 0) {
+  // alert("二番目");
+}
+
+//練習アラート;
 
 var test = location.search;
 console.log(test);
@@ -261,3 +263,99 @@ var arr2 = arr1.map(function (item) {
 });
 
 console.log(arr2);
+
+//map練習;
+
+const names = ["かほ", "さこにい", "みね", "かなこ"];
+
+console.log(names);
+
+const aaa = names.map((name) => {
+  return name + "ちゃん";
+});
+
+console.log(aaa);
+
+const bbb = location.search;
+
+console.log(bbb);
+
+const ccc = bbb.split("&");
+
+console.log(ccc);
+
+const url = ccc.map((kkk) => {
+  return kkk + "あああ";
+});
+
+console.log(url);
+
+const url2 = ccc.filter((jjj) => {
+  return jjj === "utm_area=tokyo";
+});
+
+console.log(url2);
+
+//オブジェクトフィルター
+
+const object = [
+  { name: "kaho", age: "24" },
+  { name: "sako", age: "35" },
+  { name: "mine", age: "52" },
+  { name: "hikaru", age: "44" },
+];
+
+console.log(object);
+
+const m = object.filter((nn) => {
+  return nn.name === "kaho";
+});
+
+console.log(m);
+console.log(m[0].age);
+
+//探す
+
+const index = object.findIndex((ll) => {
+  return ll.name === "sako";
+});
+
+console.log(index, object[index].age);
+
+//マップで全てに掛け算
+
+const number = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+console.log(number);
+
+const num1 = number.map((g) => {
+  return g * 2;
+});
+
+console.log(num1);
+
+//こーゆう書き方もあった
+const num2 = number.map((v, i) => i + 1).map((i) => i * 2);
+
+console.log(num2);
+
+//フィルターで奇数だけ取り出す
+
+const fil = number.filter((f) => {
+  return f % 2 === 1;
+});
+
+console.log(fil);
+
+//ファインド
+const find = number.find((r) => {
+  return r > 4;
+});
+
+console.log(find);
+
+//リヂュース
+const red = number.reduce((s, f) => {
+  return s + f;
+});
+
+console.log(red);

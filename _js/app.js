@@ -316,6 +316,12 @@ console.log(m[0].age);
 
 //探す
 
+const search = object.find((o) => {
+  return o.age === "44";
+});
+
+console.log(search);
+
 const index = object.findIndex((ll) => {
   return ll.name === "sako";
 });

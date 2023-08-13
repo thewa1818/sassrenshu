@@ -376,12 +376,44 @@ var ddd = location.search.split("&");
 
 console.log(ddd);
 
+var second = ddd.filter((k) => {
+  return k === "utm_num=2";
+});
+
+console.log(second);
+
+if (second == "utm_num=2") {
+  $(".text").text("ふたつめ!!!");
+}
+
 var ooo = ddd.filter((ee) => {
   return ee === "utm_area=tokyo";
 });
 
 console.log(ooo);
 
-if (ooo.length !== 0) {
-  alert(6666);
+if (ooo == "utm_area=tokyo") {
+  $(".text").text("変更しました");
 }
+
+const mmm = ["あ", "い", "う", "え", "お"];
+
+console.log(mmm);
+
+let ka = mmm.map((rrr) => {
+  return rrr + "!!";
+});
+
+console.log(ka);
+
+let ca = mmm.find((ooo) => {
+  return ooo === mmm[2];
+});
+
+console.log(ca);
+
+let ya = mmm.filter((hhh) => {
+  return hhh === mmm[3];
+});
+
+console.log(ya);

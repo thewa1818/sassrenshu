@@ -365,3 +365,23 @@ const red = number.reduce((s, f) => {
 });
 
 console.log(red);
+
+//見ないでやってみよう
+
+var sss = location;
+
+console.log(sss, "ああああ");
+
+var ddd = location.search.split("&");
+
+console.log(ddd);
+
+var ooo = ddd.filter((ee) => {
+  return ee === "utm_area=tokyo";
+});
+
+console.log(ooo);
+
+if (ooo.length !== 0) {
+  alert(6666);
+}

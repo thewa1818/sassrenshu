@@ -396,6 +396,28 @@ if (ooo == "utm_area=tokyo") {
   $(".text").text("変更しました");
 }
 
+//アクセスした回数をローカルストレージで保存
+let n = localStorage.getItem(ooo);
+
+//データの値を判定
+if (n === null) {
+  //データが何もない場合「1」を代入
+  n = 1;
+} else {
+  //データがある場合「1」をプラス
+  n++;
+}
+
+if (n === 5) {
+  $(".text").text("アクセス５回目");
+}
+
+//setItemメソッドでlocalStorageにデータを保存
+localStorage.setItem(ooo, n);
+
+//コンソールで値を表示
+console.log(n);
+
 const mmm = ["あ", "い", "う", "え", "お"];
 
 console.log(mmm);

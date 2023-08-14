@@ -326,7 +326,7 @@ const index = object.findIndex((ll) => {
   return ll.name === "sako";
 });
 
-console.log(index, object[index].age);
+console.log(index, object[index].age, object[index].name);
 
 //マップで全てに掛け算
 

@@ -439,3 +439,37 @@ let ya = mmm.filter((hhh) => {
 });
 
 console.log(ya);
+
+const japan = ["北海道", "宮城県", "大阪", "東京", "福岡県", "沖縄県"];
+
+console.log(japan);
+
+let ken = japan.filter((e) => {
+  return e.includes("県");
+});
+
+console.log(ken);
+
+let chiji = ken.map((b) => {
+  return b + "知事";
+});
+
+console.log(chiji);
+
+//データをテキストかする
+
+const jsonData = JSON.stringify(chiji);
+
+console.log(jsonData);
+
+const jsonBack = JSON.parse(jsonData);
+
+console.log(jsonBack);
+
+//フラットマップで同じことをする
+
+const flat = japan.flatMap((g) => {
+  return g.includes("県") ? g + "知事" : [];
+});
+
+console.log(flat);

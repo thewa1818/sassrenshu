@@ -473,3 +473,101 @@ const flat = japan.flatMap((g) => {
 });
 
 console.log(flat);
+
+const v = location.search.split("&");
+
+console.log(v);
+
+//最後の要素を消す
+v.pop();
+console.log(v);
+
+//先頭要素を消す
+const shift = v.shift();
+console.log(v);
+
+//消したやつを再追加できる
+v.unshift(shift);
+console.log(v);
+
+//指定できる。（開始位置、要素数）
+//置換できる（開始、数、”追加”）
+v.splice(0, 1, "utm_kaho=aizawa");
+console.log(v);
+
+//joinで繋げる
+const join = v.join("&");
+console.log(join);
+
+//これやるとURLが変わる。ばぐる
+// location.search = vv
+
+//切り出し
+
+//slice
+const massage = "エジプトに、いきました";
+//文字の開始場所、残す文字数
+let slc2 = massage.slice(0, 4);
+console.log(slc2);
+let slc3 = massage.slice(-6);
+console.log(slc3);
+
+//substr
+let sbr = massage.substr(0, 5);
+console.log(sbr);
+let sbr2 = massage.substr(-5, 3);
+console.log(sbr2);
+
+//substring
+//なんか使いづらい
+let subst = massage.substring(4, 0);
+console.log(subst);
+let subst2 = massage.substring(8, -1);
+console.log(subst2);
+
+//置き換え
+
+//replace
+//("置き換え前","置き換えあと")
+const mmg2 = "焼肉かラーメンが食べたい";
+let rpl = mmg2.replace("ラーメン", "チキンタツタ");
+console.log(rpl);
+
+//indexOf,lastIndexOf
+let idx = mmg2.indexOf("肉");
+console.log(idx);
+
+let idx2 = mmg2.lastIndexOf("ラーメン");
+console.log(idx2);
+//該当しない場合-1が返ってくる
+
+//トリム
+//空白を消せる
+const tm = "   やっほー   ";
+let tm2 = tm.trim();
+console.log(tm2);
+
+//大文字を小文字に変換
+//toUpperCase
+const upp = "hello,world";
+let upp2 = upp.toUpperCase();
+console.log(upp2);
+
+//その逆
+//toLowerCase
+const upp3 = "GOOD";
+let upp4 = upp3.toLowerCase();
+console.log(upp4);
+
+//文字列を数値にする
+//Number(文字列)
+const numm = "12345";
+let numm2 = Number(numm);
+console.log(typeof numm2);
+
+//数値を文字列にする
+//string(数値)
+
+const str = 111;
+let str2 = String(str);
+console.log(typeof str2);

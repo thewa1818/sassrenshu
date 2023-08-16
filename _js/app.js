@@ -519,7 +519,7 @@ let sbr2 = massage.substr(-5, 3);
 console.log(sbr2);
 
 //substring
-//なんか使いづらい
+//配列には使えない
 let subst = massage.substring(4, 0);
 console.log(subst);
 let subst2 = massage.substring(8, -1);
@@ -532,6 +532,10 @@ console.log(subst2);
 const mmg2 = "焼肉かラーメンが食べたい";
 let rpl = mmg2.replace("ラーメン", "チキンタツタ");
 console.log(rpl);
+
+//該当する場所の情報をくれる
+let mhc = mmg2.match("メン");
+console.log(mhc);
 
 //indexOf,lastIndexOf
 let idx = mmg2.indexOf("肉");
@@ -571,3 +575,55 @@ console.log(typeof numm2);
 const str = 111;
 let str2 = String(str);
 console.log(typeof str2);
+
+//綺麗にできる
+const fl = [1, 2, 3, [4, 5, [6, 7]]];
+let fl2 = fl.flat(2);
+console.log(fl2);
+//逆から
+fl2.reverse();
+console.log(fl2);
+//追加
+let cc = fl2.concat(8, 9);
+console.log(cc);
+//含んでいるか
+let inc = cc.includes(5);
+console.log(inc);
+//辞書並べ
+let st = cc.sort();
+console.log(st);
+
+//埋める
+const arr = new Array(10);
+console.log(arr);
+arr.fill("★");
+console.log(arr);
+arr.fill("🤍", 3, 8);
+console.log(arr);
+
+//空白をあける
+let pad = "abc".padStart(10);
+console.log(pad);
+let pad2 = "123".padEnd(10, "123");
+console.log(pad2);
+
+//オブジェクトごにょごにょ
+const fluit = {
+  apple: 100,
+  orange: 200,
+  banana: 300,
+  strawberry: 150,
+};
+
+console.log(fluit);
+
+Object.keys(fluit).forEach((key) => console.log(key));
+
+console.log(Object.values(fluit));
+
+Object.entries(fluit).forEach(([key, value]) => console.log(key, value));
+
+//順番通りになるわけではないfor in文
+for (const key in fluit) {
+  console.log(`${key}の値段は${fluit[key]}円です`);
+}

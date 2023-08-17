@@ -415,7 +415,6 @@ if (n === 5) {
 //setItemメソッドでlocalStorageにデータを保存
 localStorage.setItem(ooo, n);
 
-//コンソールで値を表示
 console.log(n);
 
 const mmm = ["あ", "い", "う", "え", "お"];
@@ -512,12 +511,6 @@ console.log(slc2);
 let slc3 = massage.slice(-6);
 console.log(slc3);
 
-//substr
-let sbr = massage.substr(0, 5);
-console.log(sbr);
-let sbr2 = massage.substr(-5, 3);
-console.log(sbr2);
-
 //substring
 //配列には使えない
 let subst = massage.substring(4, 0);
@@ -584,7 +577,8 @@ console.log(fl2);
 fl2.reverse();
 console.log(fl2);
 //追加
-let cc = fl2.concat(8, 9);
+let ggg = [8, 9];
+let cc = fl2.concat(ggg);
 console.log(cc);
 //含んでいるか
 let inc = cc.includes(5);

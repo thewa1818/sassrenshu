@@ -37,11 +37,11 @@ const html = tasks.map((item, index) => {
 
 $("#test").html(html);
 
-$(".box-btn").on("click", function () {
-  const v = $(this).siblings().eq(0).text();
-  console.log(v, "vvv");
-  // alert(v, "vvv");
-});
+// $(".box-btn").on("click", function () {
+//   const v = $(this).siblings().eq(0).text();
+//   console.log(v, "vvv");
+//   alert(v, "vvv");
+// });
 
 // .siblings() - 全ての兄弟要素を取得する
 // .children() -の中の子要素を取得
@@ -50,7 +50,7 @@ $(".box-btn").on("click", function () {
 
 //jQueryのclickを使う場合、指定したセレクタが親子で同じ場合は両方処理される。
 
-// 子要素だけ処理したい場合は、return false;を追加する。
+// 子要素だけ処理したい場合は、return false;を追加する。？
 
 // ２回目以降ボックス内どこ押しても赤になる
 // $(".box-btn").on("click", function () {
@@ -77,10 +77,6 @@ $(".box-btn").on("click", function () {
 // const r = $("#test").parent().find("p");
 // console.log(r, "子要素の取得");
 
-// $(".box-btn").on("click", function () {
-//   $("#test").filter(".box").css("background", "red");
-// });
-
 //配列にするやつJQ
 // let arr = $.makeArray($(".box"));
 // console.log(arr);
@@ -101,12 +97,31 @@ $(".box-btn").on("click", function () {
 //   console.log(v);
 // });
 
-// function mapFunc(item, index) {
-//   const boxs = $(".box");
-//   console.log(boxs, index);
-//   return boxs;
+// function mapFunc(index, elem) {
+//   return $(elem).find(".box").get();
 // }
 
-// $(".box-btn").click(function () {
-//   $(".box").filter("div").css("background-color", "#fcf");
+// $("button").click(function () {
+//   $("div").map(mapFunc).css("background-color", "red");
 // });
+
+//--------------------------------------------------//
+// $(".box-btn").on("click", function () {
+//   $(this).parent().css("background", "red");
+// });
+
+//できた！！
+
+//parent＝thisの親要素！！！
+
+// $(".box-btn").on("click", function () {
+//   $(this).parents().css("background", "orange");
+// });
+
+//parents さらにその親
+
+$(".box-btn").on("click", function () {
+  $(this).closest("div").css("background", "blue");
+});
+
+//thisに一番近いdiv要素を指定する。これでもできる

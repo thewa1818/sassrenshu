@@ -106,22 +106,25 @@ $("#test").html(html);
 // });
 
 //--------------------------------------------------//
-// $(".box-btn").on("click", function () {
-//   $(this).parent().css("background", "red");
-// });
 
 //できた！！
 
 //parent＝thisの親要素！！！
+$(".box-btn").on("click", function () {
+  // $(this).parent().css("background", "red");
+  $(this).parent().toggleClass("btn-color");
+});
 
+//toggleClassでごにょごにょ
+
+//parents さらにその親を指定したいとき
 // $(".box-btn").on("click", function () {
 //   $(this).parents().css("background", "orange");
 // });
 
-//parents さらにその親
-
-$(".box-btn").on("click", function () {
-  $(this).closest("div").css("background", "blue");
-});
+//closest
+// $(".box-btn").on("click", function () {
+//   $(this).closest("div").css("background", "blue");
+// });
 
 //thisに一番近いdiv要素を指定する。これでもできる
